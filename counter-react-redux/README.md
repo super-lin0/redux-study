@@ -1,6 +1,6 @@
 # React Code Splitting Basic
 
-React Code Splitting Basic demo
+React 结合 Redux 实现计数器
 
 ## 运行
 
