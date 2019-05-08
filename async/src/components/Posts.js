@@ -1,9 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Posts extends Component {
-  render() {
-    return <div>Posts</div>;
-  }
-}
+const Posts = ({ posts }) => {
+  return (
+    <ul>
+      {posts.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  );
+};
 
 export default Posts;

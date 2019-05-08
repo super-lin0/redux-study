@@ -1,9 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Picker extends Component {
-  render() {
-    return <div>Picker</div>;
-  }
-}
+const Picker = ({ value, onChange, options }) => (
+  <span>
+    <h1>{value}</h1>
+    <select onChange={e => onChange(e.target.value)} value={value}>
+      {options.map(item => (
+        <option value={item} key={item}>
+          {item}
+        </option>
+      ))}
+    </select>
+  </span>
+);
 
 export default Picker;
