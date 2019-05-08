@@ -1,6 +1,6 @@
 # React Code Splitting Basic
 
-React+Redux+React-redux 实现计数器
+React+Redux+React-redux 实现计数器, 将 connect 剥离，单独抽取成容器组件
 
 ## 运行
 
