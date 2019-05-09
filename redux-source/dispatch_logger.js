@@ -34,6 +34,8 @@ const addLoggingToDispatch = store => {
 };
 
 // 加上对环境的判断
-if(prosess.env.NODE_ENV !== "production") {
-  const store.dispatch = addLoggingToDispatch(store);
-}
+// if(prosess.env.NODE_ENV !== "production") {
+//   const store.dispatch = addLoggingToDispatch(store);
+// }
+
+export default addLoggingToDispatch;
