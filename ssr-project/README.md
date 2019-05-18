@@ -15,7 +15,7 @@ $ yarn
 第三步，进行构建
 
 ```bash
-$ npm start
+$ yarn start
 ```
 
 第四步，打开 http://localhost:3000/，预览效果
