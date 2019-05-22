@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import data from "./data.json";
 
 import ContactsApp from "./components/ContactsApp";
 import "./App.css";
@@ -12,7 +11,7 @@ class App extends Component {
       .then(response => response.json())
       .then(parsedResponse => {
         const { results = [] } = parsedResponse;
-        results.map(user => ({
+        return results.map(user => ({
           name: `${user.name.first} ${user.name.last}`,
           email: user.email,
           thumbnail: user.picture.thumbnail
@@ -22,7 +21,16 @@ class App extends Component {
   }
 
   render() {
-    return <div className="App">Hello World!</div>;
+    const { contacts = [] } = this.state;
+    return (
+      <div className="App">
+        {contacts.length === 0 ? (
+          <div>Loading....</div>
+        ) : (
+          <ContactsApp contacts={contacts} />
+        )}
+      </div>
+    );
   }
 }
 
