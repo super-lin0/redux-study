@@ -1,7 +1,6 @@
 {
-  "name": "children-api",
-  "version": "0.1.0",
-  "private": true,
+  "name": "children-api-wulin",
+  "version": "0.0.1",
   "dependencies": {
     "react": "^16.8.6",
     "react-addons-css-transition-group": "^15.6.2",
