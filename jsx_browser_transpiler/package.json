@@ -1,7 +1,9 @@
 {
   "name": "jsx_browser_transpiler",
-  "version": "0.1.0",
+  "version": "0.0.2",
   "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
