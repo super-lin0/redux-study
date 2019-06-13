@@ -1,9 +1,12 @@
 {
   "name": "wl-select",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "",
   "main": "lib/index",
   "module": "es/index",
+  "homepage": "https://github.com/super-lin0/",
+  "repository": "https://github.com/super-lin0/redux-study/tree/master/wl-select",
+  "author": "super-lin0 <changsha.wulin@gmail.com>",
   "files": [
     "assets/*.css",
     "es",
@@ -13,7 +16,6 @@
     "compile": "rc-tools run compile --babel-runtime",
     "prepublish": "rc-tools run compile --babel-runtime"
   },
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "babel-runtime": "^6.26.0",
