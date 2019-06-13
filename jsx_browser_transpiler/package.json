@@ -1,7 +1,8 @@
 {
   "name": "jsx_browser_transpiler",
-  "version": "0.0.9",
+  "version": "0.1.1",
   "dependencies": {
+    "babel-preset-stage-2": "^6.24.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
