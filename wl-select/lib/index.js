@@ -24,27 +24,55 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactSelect = require("react-select");
+
+var _reactSelect2 = _interopRequireDefault(_reactSelect);
+
+var _country = require("./country");
+
+var _country2 = _interopRequireDefault(_country);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var options = [{ value: "chocolate", label: "Chocolate" }, { value: "strawberry", label: "Strawberry" }, { value: "vanilla", label: "Vanilla" }];
 
 var WlSelect = function (_Component) {
   (0, _inherits3["default"])(WlSelect, _Component);
 
   function WlSelect() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     (0, _classCallCheck3["default"])(this, WlSelect);
-    return (0, _possibleConstructorReturn3["default"])(this, (WlSelect.__proto__ || Object.getPrototypeOf(WlSelect)).apply(this, arguments));
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3["default"])(this, (_ref = WlSelect.__proto__ || Object.getPrototypeOf(WlSelect)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      selectedOption: null
+    }, _this.handleChange = function (selectedOption) {
+      _this.setState({ selectedOption: selectedOption });
+      console.log("Option selected:", selectedOption);
+    }, _temp), (0, _possibleConstructorReturn3["default"])(_this, _ret);
   }
 
   (0, _createClass3["default"])(WlSelect, [{
     key: "render",
     value: function render() {
+      var selectedOption = this.state.selectedOption;
+
+
       return _react2["default"].createElement(
         "div",
         null,
-        _react2["default"].createElement(
-          "h1",
-          null,
-          "Hello Select"
-        )
+        _react2["default"].createElement(_country2["default"], null),
+        _react2["default"].createElement(_reactSelect2["default"], {
+          value: selectedOption,
+          onChange: this.handleChange,
+          options: options
+        })
       );
     }
   }]);
