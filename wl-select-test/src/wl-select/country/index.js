@@ -1,18 +1,20 @@
-import React, { Component } from "react";
-import { COUNTRYLIST } from "../data";
+import React from "react";
 import "./index.css";
 
-class Country extends Component {
-  render() {
-    const countryOpts =
-      COUNTRYLIST && COUNTRYLIST.map(item => <li key={item}>{item}</li>);
+const Country = ({ onClick, countries }) => {
+  const countryOpts =
+    countries &&
+    countries.map((item, index) => (
+      <li key={item} onClick={onClick} id={index}>
+        {item}
+      </li>
+    ));
 
-    return (
-      <div className="select-country">
-        <ul className="select-city">{countryOpts}</ul>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="select-country">
+      <ul className="select-city">{countryOpts}</ul>
+    </div>
+  );
+};
 
 export default Country;
