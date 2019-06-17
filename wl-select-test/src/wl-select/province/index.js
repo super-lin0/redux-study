@@ -7,7 +7,7 @@ const Province = ({ onClick, countryIndex, provinces }) => {
   const sortedCountryList = provs.sort((a, b) => a["n"].localeCompare(b["n"]));
 
   const provOpts = sortedCountryList.map((item, index) => (
-    <li key={item} onClick={onClick} id={index}>
+    <li key={index} onClick={onClick} id={index}>
       {item["n"]}
     </li>
   ));
