@@ -52,6 +52,7 @@ class WlSelect extends Component {
           onClick={this.provClick}
         />
         <UniversityList
+          className="sel-university"
           allUnivList={allUnivList}
           countryIndex={selectCountryIndex}
           provIndex={selectProvIndex}

@@ -6,3 +6,8 @@
 .root span {
   color: #999999;
 }
+
+.sel-university {
+  height: 130px;
+  overflow-y: auto;
+}
