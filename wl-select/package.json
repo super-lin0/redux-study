@@ -1,6 +1,6 @@
 {
   "name": "wl-select",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "description": "",
   "main": "lib/index",
   "module": "es/index",
@@ -30,14 +30,5 @@
   },
   "devDependencies": {
     "rc-tools": "^8.1.6"
-  },
-  "config": {
-    "entry": {
-      "rc-table": [
-        "./assets/index.less",
-        "./assets/index.less",
-        "./src/index.js"
-      ]
-    }
   }
 }
