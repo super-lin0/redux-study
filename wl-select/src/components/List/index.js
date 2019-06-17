@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.less";
+import "wl-select/assets/list.css";
 
 const List = ({ opts }) => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.less";
+import "wl-select/assets/list.css";
 
 var List = function List(_ref) {
   var opts = _ref.opts;

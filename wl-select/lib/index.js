@@ -42,7 +42,7 @@ var _index7 = require("./components/List/index");
 
 var _index8 = _interopRequireDefault(_index7);
 
-require("./index.less");
+require("wl-select/assets/index.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
