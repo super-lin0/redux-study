@@ -6,7 +6,6 @@ import ProvList from "./province/index.js";
 
 class WlSelect extends Component {
   state = {
-    selectedOption: null,
     selectCountryIndex: 0
   };
   handleChange = selectedOption => {
@@ -20,7 +19,7 @@ class WlSelect extends Component {
     }
   };
   render() {
-    const { selectedOption, selectCountryIndex } = this.state;
+    const { selectCountryIndex } = this.state;
 
     return (
       <div>
