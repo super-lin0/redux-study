@@ -62,7 +62,11 @@ class WlSelect extends Component {
     this.searching = true;
 
     const searchVal = e.target.value;
-    this.setState({ searchText: searchVal, selectCountryIndex: "" });
+    this.setState({
+      searchText: searchVal,
+      selectCountryIndex: "",
+      selectSchoolText: ""
+    });
 
     let timeOut;
     clearTimeout(timeOut);

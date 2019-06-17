@@ -101,7 +101,11 @@ var WlSelect = function (_Component) {
       _this.searching = true;
 
       var searchVal = e.target.value;
-      _this.setState({ searchText: searchVal, selectCountryIndex: "" });
+      _this.setState({
+        searchText: searchVal,
+        selectCountryIndex: "",
+        selectSchoolText: ""
+      });
 
       var timeOut = void 0;
       clearTimeout(timeOut);
