@@ -19,6 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "babel-runtime": "^6.26.0",
+    "css-loader": "^3.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-select": "^3.0.4"
