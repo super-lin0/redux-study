@@ -42,7 +42,7 @@ var _index7 = require("./components/List/index");
 
 var _index8 = _interopRequireDefault(_index7);
 
-require("./index.css");
+require("./index.less");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 

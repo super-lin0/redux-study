@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css";
+import "./index.less";
 
 var List = function List(_ref) {
   var opts = _ref.opts;

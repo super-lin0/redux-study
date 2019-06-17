@@ -6,7 +6,7 @@ import ProvList from "./province/index.js";
 import UniversityList from "./university/index.js";
 import List from "./components/List/index";
 
-import "./index.css";
+import "./index.less";
 
 class WlSelect extends Component {
   constructor(props) {

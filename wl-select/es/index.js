@@ -10,7 +10,7 @@ import ProvList from "./province/index.js";
 import UniversityList from "./university/index.js";
 import List from "./components/List/index";
 
-import "./index.css";
+import "./index.less";
 
 var WlSelect = function (_Component) {
   _inherits(WlSelect, _Component);

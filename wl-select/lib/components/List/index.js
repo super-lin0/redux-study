@@ -8,7 +8,7 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-require("./index.css");
+require("./index.less");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
