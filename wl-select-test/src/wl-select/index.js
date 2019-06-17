@@ -7,8 +7,9 @@ import UniversityList from "./university/index.js";
 
 class WlSelect extends Component {
   state = {
-    selectCountryIndex: 0,
-    selectProvIndex: 0
+    selectCountryIndex: "",
+    selectProvIndex: "",
+    selectSchoolText: ""
   };
   handleChange = selectedOption => {
     this.setState({ selectedOption });
@@ -26,8 +27,18 @@ class WlSelect extends Component {
       this.setState({ selectProvIndex });
     }
   };
+  univClick = e => {
+    if (e.target && e.target.nodeName === "LI") {
+      const selectSchoolText = e.target.id;
+      this.setState({ selectSchoolText });
+    }
+  };
   render() {
-    const { selectCountryIndex, selectProvIndex } = this.state;
+    const {
+      selectCountryIndex,
+      selectProvIndex,
+      selectSchoolText
+    } = this.state;
 
     return (
       <div>
@@ -43,6 +54,7 @@ class WlSelect extends Component {
           provIndex={selectProvIndex}
           onClick={this.univClick}
         />
+        {selectSchoolText ? <div>已选择：{selectSchoolText}</div> : ""}
       </div>
     );
   }

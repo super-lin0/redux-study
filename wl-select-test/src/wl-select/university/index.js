@@ -9,7 +9,7 @@ const Province = ({ onClick, countryIndex, provIndex, allUnivList }) => {
   const univList = (provList[provIndex] && provList[provIndex]["u"]) || [];
 
   const univOpts = univList.map((item, index) => (
-    <li key={index} onClick={onClick} id={index}>
+    <li key={index} onClick={onClick} id={item["n"]}>
       {item["n"]}
     </li>
   ));
