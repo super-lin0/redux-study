@@ -13,20 +13,20 @@ class WlSelect extends Component {
     selectProvIndex: "",
     selectSchoolText: ""
   };
-  handleChange = selectedOption => {
-    this.setState({ selectedOption });
-    console.log(`Option selected:`, selectedOption);
-  };
   countryClick = e => {
     if (e.target && e.target.nodeName === "LI") {
       const selectCountryIndex = e.target.id;
-      this.setState({ selectCountryIndex });
+      this.setState({
+        selectCountryIndex,
+        selectProvIndex: "",
+        selectSchoolText: ""
+      });
     }
   };
   provClick = e => {
     if (e.target && e.target.nodeName === "LI") {
       const selectProvIndex = e.target.id;
-      this.setState({ selectProvIndex });
+      this.setState({ selectProvIndex, selectSchoolText: "" });
     }
   };
   univClick = e => {
