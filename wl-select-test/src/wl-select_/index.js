@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { COUNTRYLIST, allUnivList } from "./data";
 
-import CountryList from "./country/index.js";
-import ProvList from "./province/index.js";
-import UniversityList from "./university/index.js";
+import CountryList from "./country/index.js.js";
+import ProvList from "./province/index.js.js";
+import UniversityList from "./university/index.js.js";
 import List from "./components/List/index";
 
 import "./index.css";

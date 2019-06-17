@@ -1,6 +1,6 @@
 import React from "react";
 
-import List from "../components/List/index.js";
+import List from "../components/List/index.js.js";
 
 const Country = ({ onClick, countries }) => {
   const countryOpts =

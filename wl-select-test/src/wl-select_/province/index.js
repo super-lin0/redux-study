@@ -1,5 +1,5 @@
 import React from "react";
-import List from "../components/List/index.js";
+import List from "../components/List/index.js.js";
 
 const Province = ({ onClick, countryIndex, provinces }) => {
   const country = (provinces && countryIndex && provinces[countryIndex]) || [];
