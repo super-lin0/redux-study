@@ -1,6 +1,6 @@
 {
   "name": "wl-select",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "",
   "main": "lib/index",
   "module": "es/index",
@@ -8,7 +8,7 @@
   "repository": "https://github.com/super-lin0/redux-study/tree/master/wl-select",
   "author": "super-lin0 <changsha.wulin@gmail.com>",
   "files": [
-    "assets/*.css",
+    "src/*.css",
     "es",
     "lib"
   ],

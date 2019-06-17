@@ -8,3 +8,4 @@ var COUNTRYLIST = ["中国大陆", "Japan", "Singapore", "Korea", "USA", "Canada
 
 exports.allProvList = allProvList;
 exports.COUNTRYLIST = COUNTRYLIST;
+exports.allUnivList = allUnivList;

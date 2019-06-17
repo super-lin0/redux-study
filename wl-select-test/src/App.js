@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-import Select from "./wl-select";
+import Select from "wl-select";
 
 function App() {
   const handleSchoolChange = university => {

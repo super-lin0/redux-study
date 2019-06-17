@@ -9928,10 +9928,10 @@ wide-align@^1.1.0:
   dependencies:
     string-width "^1.0.2 || 2"
 
-wl-select@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/wl-select/-/wl-select-0.1.0.tgz#751790030ff1f9e07374f13f9130e76ef5f2be7f"
-  integrity sha512-wuhXIy0DSPAVP7u9gTU3qwp70EB1XXRZ4EqzL5C/+2rdiUdQ+8dNg8ja+xLRH5WIKeasye+NZM06XwVi3lO0jQ==
+wl-select@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/wl-select/-/wl-select-0.1.3.tgz#ab181a9a897ad598e1a2a798462483928c971d68"
+  integrity sha512-ZYA+D8xt3upXAmA6x1RneFUgYM4ko5HujegBheJcIta5SuQiPIMtxKsoeaf1IqUcRijCK/v7MXW1NgACauzsmw==
   dependencies:
     babel-runtime "^6.26.0"
     react "^16.4.2"
