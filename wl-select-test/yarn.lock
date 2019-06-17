@@ -9757,10 +9757,10 @@ wide-align@^1.1.0:
   dependencies:
     string-width "^1.0.2 || 2"
 
-wl-select@^0.1.9:
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/wl-select/-/wl-select-0.1.9.tgz#85dc067b934be6e36f15accb1c727ed1a11604d3"
-  integrity sha512-LObxLV+LEqLcgVuiraQqwcY6MnNI1nEHHq5u2rrQmk7ntqsl6I4jeVU+Oj9Hsi1o8m7i3nlhJsfUupSX8XLe3Q==
+wl-select@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/wl-select/-/wl-select-0.2.0.tgz#4ab1517ebc65c45064f755c5542226aa50618506"
+  integrity sha512-wArso9jvTiQQwUQhTcldWcDfrD24SyFtbwZWEoU5EDpaAN8xFndyfBgjecpaSxGAaMRAU/NswELneOUfBWsUzA==
   dependencies:
     babel-runtime "^6.26.0"
     react "^16.4.2"
