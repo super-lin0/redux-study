@@ -27,6 +27,7 @@ class WlSelect extends Component {
     if (e.target && e.target.nodeName === "LI") {
       this.search = false;
       const selectCountryIndex = e.target.id;
+      console.log(selectCountryIndex);
       this.setState({
         selectCountryIndex,
         selectProvIndex: "",
@@ -61,7 +62,7 @@ class WlSelect extends Component {
     this.searching = true;
 
     const searchVal = e.target.value;
-    this.setState({ searchText: searchVal });
+    this.setState({ searchText: searchVal, selectCountryIndex: "" });
 
     let timeOut;
     clearTimeout(timeOut);
@@ -100,6 +101,13 @@ class WlSelect extends Component {
     this.searching = false;
   };
 
+  userInputHandle = e => {
+    e.preventDefault();
+    const selectSchoolText = e.target.value;
+    this.setState({ selectSchoolText });
+    this.props.onChange(selectSchoolText);
+  };
+
   render() {
     const {
       selectCountryIndex,
@@ -108,6 +116,11 @@ class WlSelect extends Component {
       searchText,
       searchArr
     } = this.state;
+
+    const isUserInput =
+      Number(selectCountryIndex) === 15 || Number(selectCountryIndex) === 14;
+
+    const isUserSelect = !isUserInput && selectCountryIndex !== "";
 
     let searchUniOpts = [];
 
@@ -130,7 +143,7 @@ class WlSelect extends Component {
           </ul>
         </div>
         <CountryList countries={COUNTRYLIST} onClick={this.countryClick} />
-        {selectCountryIndex && (
+        {isUserSelect && selectCountryIndex && (
           <ProvList
             provinces={allUnivList}
             countryIndex={selectCountryIndex}
@@ -139,7 +152,8 @@ class WlSelect extends Component {
         )}
         {this.searching && !!searchText
           ? "Search..."
-          : selectCountryIndex && (
+          : isUserSelect &&
+            selectCountryIndex && (
               <UniversityList
                 allUnivList={allUnivList}
                 countryIndex={selectCountryIndex}
@@ -147,19 +161,24 @@ class WlSelect extends Component {
                 onClick={this.univClick}
               />
             )}
-        {this.search ? (
-          searchUniOpts.length > 0 ? (
+        {this.search &&
+          (searchUniOpts.length > 0 ? (
             <List opts={searchUniOpts} />
           ) : (
             "No result"
-          )
-        ) : (
-          ""
+          ))}
+        {isUserInput && (
+          <div className="search-val">
+            <ul>
+              <li>
+                输入：
+                <input className="user-input" onChange={this.userInputHandle} />
+              </li>
+            </ul>
+          </div>
         )}
-        {selectSchoolText ? (
+        {selectSchoolText && (
           <div className="sel-school">已选择：{selectSchoolText}</div>
-        ) : (
-          ""
         )}
       </div>
     );

@@ -11,17 +11,20 @@
 .search-val li {
   list-style: none;
 }
-.search-input {
+.search-input,
+.user-input {
   width: 200px;
 }
 
-.search-input:focus {
+.search-input:focus,
+.user-input:focus {
   outline-color: #349e5e;
   border-color: #349e5e;
 }
 
 .root .sel-school {
   margin-top: 10px;
+  margin-left: 40px;
   color: #999999;
 }
 
