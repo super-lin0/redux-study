@@ -4,9 +4,12 @@ import "./App.css";
 import Select from "./wl-select";
 
 function App() {
+  const handleSchoolChange = university => {
+    console.log(university);
+  };
   return (
     <div className="app">
-      <Select />
+      <Select onChange={handleSchoolChange} />
     </div>
   );
 }

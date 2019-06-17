@@ -5,6 +5,8 @@ import CountryList from "./country/index.js";
 import ProvList from "./province/index.js";
 import UniversityList from "./university/index.js";
 
+import "./index.css";
+
 class WlSelect extends Component {
   state = {
     selectCountryIndex: "",
@@ -31,6 +33,7 @@ class WlSelect extends Component {
     if (e.target && e.target.nodeName === "LI") {
       const selectSchoolText = e.target.id;
       this.setState({ selectSchoolText });
+      this.props.onChange(selectSchoolText);
     }
   };
   render() {
@@ -41,7 +44,7 @@ class WlSelect extends Component {
     } = this.state;
 
     return (
-      <div>
+      <div className="root">
         <CountryList countries={COUNTRYLIST} onClick={this.countryClick} />
         <ProvList
           provinces={allUnivList}
@@ -54,7 +57,7 @@ class WlSelect extends Component {
           provIndex={selectProvIndex}
           onClick={this.univClick}
         />
-        {selectSchoolText ? <div>已选择：{selectSchoolText}</div> : ""}
+        {selectSchoolText ? <span>已选择：{selectSchoolText}</span> : ""}
       </div>
     );
   }

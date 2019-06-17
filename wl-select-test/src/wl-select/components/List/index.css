@@ -8,11 +8,11 @@
   display: inline;
   list-style: none;
   cursor: pointer;
-  color: #288df0;
+  color: #999999;
   vertical-align: top;
 }
 
 .select-country .select-city li:hover {
-  background-color: #ff9900;
+  background-color: #349e5e;
   color: #fff;
 }
