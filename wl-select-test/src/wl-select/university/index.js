@@ -1,5 +1,6 @@
 import React from "react";
-import "./index.css";
+
+import List from "../components/List/index";
 
 const Province = ({ onClick, countryIndex, provIndex, allUnivList }) => {
   const country =
@@ -13,11 +14,7 @@ const Province = ({ onClick, countryIndex, provIndex, allUnivList }) => {
     </li>
   ));
 
-  return (
-    <div className="select-country">
-      <ul className="select-city">{univOpts}</ul>
-    </div>
-  );
+  return <List opts={univOpts} />;
 };
 
 export default Province;

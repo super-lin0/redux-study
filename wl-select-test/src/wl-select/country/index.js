@@ -1,5 +1,6 @@
 import React from "react";
-import "./index.css";
+
+import List from "../components/List/index.js";
 
 const Country = ({ onClick, countries }) => {
   const countryOpts =
@@ -10,11 +11,7 @@ const Country = ({ onClick, countries }) => {
       </li>
     ));
 
-  return (
-    <div className="select-country">
-      <ul className="select-city">{countryOpts}</ul>
-    </div>
-  );
+  return <List opts={countryOpts} />;
 };
 
 export default Country;
