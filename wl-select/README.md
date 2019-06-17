@@ -20,6 +20,8 @@ $ yarn start
 
 第四步，打开 http://localhost:3000/，预览效果
 
+![](https://raw.githubusercontent.com/super-lin0/pic/master/20190617212444.png)
+
 # Usage
 
 ```
