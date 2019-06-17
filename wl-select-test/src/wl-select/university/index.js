@@ -2,7 +2,7 @@ import React from "react";
 
 import List from "../components/List/index";
 
-const Province = ({ onClick, countryIndex, provIndex, allUnivList }) => {
+const University = ({ onClick, countryIndex, provIndex, allUnivList }) => {
   const country =
     (allUnivList && countryIndex && allUnivList[countryIndex]) || [];
   const provList = country["provs"] || [];
@@ -17,4 +17,4 @@ const Province = ({ onClick, countryIndex, provIndex, allUnivList }) => {
   return <List opts={univOpts} />;
 };
 
-export default Province;
+export default University;
