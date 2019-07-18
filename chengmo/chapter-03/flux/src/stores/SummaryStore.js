@@ -18,9 +18,15 @@ const computeSummary = counterValues => {
 
 const SummaryStore = Object.assign({}, EventEmitter.prototype, {
   getSummary: () => computeSummary(CounterStore.getCounterValues()),
-  emitChange: () => this.emit(CHANGE_EVENT),
-  addChangeListener: callback => this.on(CHANGE_EVENT, callback),
-  removeChangeListener: callback => this.removeListener(CHANGE_EVENT, callback)
+  emitChange: function() {
+    this.emit(CHANGE_EVENT);
+  },
+  addChangeListener: function(callback) {
+    this.on(CHANGE_EVENT, callback);
+  },
+  removeChangeListener: function(callback) {
+    this.removeListener(CHANGE_EVENT, callback);
+  }
 });
 
 SummaryStore.dispatchToken = AppDispatcher.register(action => {

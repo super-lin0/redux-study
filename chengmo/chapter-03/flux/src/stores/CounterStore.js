@@ -1,4 +1,4 @@
-import AppDispatcher from "flux";
+import AppDispatcher from "../AppDispatcher";
 import { EventEmitter } from "events";
 
 import * as ActionTypes from "../ActionTypes";
@@ -13,9 +13,15 @@ const CHANGE_EVENT = "changed";
 
 const CounterStore = Object.assign({}, EventEmitter.prototype, {
   getCounterValues: () => counterValues,
-  emitChange: () => this.emit(CHANGE_EVENT),
-  addChangeListener: callback => this.on(CHANGE_EVENT, callback),
-  removeChangeListener: callback => this.removeListener(CHANGE_EVENT, callback)
+  emitChange: function() {
+    this.emit(CHANGE_EVENT);
+  },
+  addChangeListener: function(callback) {
+    this.on(CHANGE_EVENT, callback);
+  },
+  removeChangeListener: function(callback) {
+    this.removeListener(CHANGE_EVENT, callback);
+  }
 });
 
 CounterStore.dispatchToken = AppDispatcher.register(action => {

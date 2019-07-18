@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import CounterStore from "../stores/CounterStore";
+import { increment, decrement } from "../Actions";
 
 const buttonStyle = {
   margin: "20px"
@@ -8,24 +10,31 @@ class Counter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: props.initValue
+      count: CounterStore.getCounterValues()[props.caption]
     };
   }
+
+  componentDidMount() {
+    CounterStore.addChangeListener(this.onChange);
+  }
+
+  componentWillUnmount() {
+    CounterStore.removeChangeListener(this.onChange);
+  }
+
+  onChange = () => {
+    const count = CounterStore.getCounterValues()[this.props.caption];
+    this.setState({ count });
+  };
 
   static defaultProps = {
     initValue: 0,
     onUpdate: f => f
   };
 
-  handleIncrement = () => this.updateCount(true);
-  handleDecrement = () => this.updateCount(false);
+  handleIncrement = () => increment(this.props.caption);
 
-  updateCount = flag => {
-    const prevCount = this.state.count;
-    const newValue = flag ? prevCount + 1 : prevCount - 1;
-    this.setState({ count: newValue });
-    this.props.onUpdate(newValue, prevCount);
-  };
+  handleDecrement = () => decrement(this.props.caption);
 
   render() {
     const { caption } = this.props;
