@@ -23,7 +23,7 @@ const Counter = ({ caption, handleDecrement, handleIncrement, count }) => {
   );
 };
 
-const mapStateTpProps = (state, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     value: state[ownProps.caption]
   };
@@ -36,6 +36,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 };
 
 export default connect(
-  mapStateTpProps,
+  mapStateToProps,
   mapDispatchToProps
 )(Counter);
