@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import TodoItem from "./todoItem";
-import { FilterTypes } from "../../constants";
+import { selectVisibleTodos } from "../selector";
 
 const TodoList = ({ todos = [] }) => {
   return (
@@ -24,22 +24,9 @@ TodoList.propTypes = {
   todos: PropTypes.array.isRequired
 };
 
-const selectVisibleTodos = (todos, filter) => {
-  switch (filter) {
-    case FilterTypes.ALL:
-      return todos;
-    case FilterTypes.COMPLETED:
-      return todos.filter(item => item.completed);
-    case FilterTypes.UNCOMPLETED:
-      return todos.filter(item => !item.completed);
-    default:
-      throw new Error("unsupported filter");
-  }
-};
-
-const mapStateToProps = ({ todos, filter }) => {
+const mapStateToProps = state => {
   return {
-    todos: selectVisibleTodos(todos, filter)
+    todos: selectVisibleTodos(state)
   };
 };
 
