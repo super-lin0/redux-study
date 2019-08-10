@@ -4,6 +4,10 @@ import PropTypes from "prop-types";
 const doNothing = () => ({});
 
 function connect(mapStateToProps = doNothing, mapDispatchToProps = doNothing) {
+  // 增加显示名
+  const getDisplayName = WrappedComponent => {
+    return WrappedComponent.displayName || WrappedComponent.name || "Component";
+  };
   return WrappedComponent => {
     class HOCComponent extends Component {
       constructor(props) {
@@ -37,6 +41,8 @@ function connect(mapStateToProps = doNothing, mapDispatchToProps = doNothing) {
     HOCComponent.contextType = {
       store: PropTypes.object
     };
+
+    HOCComponent.displayName = `Connect(${getDisplayName(WrappedComponent)})`;
 
     return HOCComponent;
   };

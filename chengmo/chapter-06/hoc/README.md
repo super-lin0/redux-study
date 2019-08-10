@@ -44,3 +44,9 @@ const removeUserProp1 = WrappedComponent => props => {
   4、包装组件
 
 ### 继承方式的高阶组件
+
+- 应用场景
+
+  1、操纵 props
+
+  2、操纵生命周期函数
