@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      #sample {
+        background: red;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="sample"></div>
+    <script>
+      var lastTimeStamp = new Date().getTime();
+      function raf(fn) {
+        var currentTimeStamp = new Date().getTime();
+        var delay = Math.max(0, 16 - (currentTimeStamp - lastTimeStamp));
+
+        var handle = setTimeout(function() {
+          fn(currentTimeStamp);
+        }, delay);
+        lastTimeStamp = currentTimeStamp;
+        return handle;
+      }
+
+      var left = 0;
+      var anmiationEle = document.getElementById("sample");
+      var startTimeStamp = new Date().getTime();
+      function render(timeStamp) {
+        left += (timeStamp - startTimeStamp) / 16;
+        anmiationEle.style.left = `${left}px`;
+        if (left < 400) {
+          raf(render);
+        }
+      }
+
+      raf(render);
+    </script>
+  </body>
+</html>

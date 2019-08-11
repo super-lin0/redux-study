@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      #sample {
+        position: absolute;
+        background: red;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="sample"></div>
+
+    <script>
+      let animationEle = document.getElementById("sample");
+      var left = 0;
+      var timer;
+      var ANIMATION_INTERVAL = 16;
+
+      timer = setInterval(() => {
+        left += 10;
+        animationEle.style.left = `${left}px`;
+
+        if (left >= 400) {
+          clearInterval(timer);
+        }
+      }, ANIMATION_INTERVAL);
+    </script>
+  </body>
+</html>
