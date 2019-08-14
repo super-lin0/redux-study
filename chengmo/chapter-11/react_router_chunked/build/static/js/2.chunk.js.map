@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/Home.js"],"names":["Home","Component"],"mappings":"0hBAEMA,E,+MAEF,OAAO,yC,GAFQC,aAMJD","file":"static/js/2.chunk.js","sourcesContent":["import React, { Component } from \"react\";\n\nclass Home extends Component {\n  render() {\n    return <div>Home</div>;\n  }\n}\n\nexport default Home;\n"],"sourceRoot":""}
