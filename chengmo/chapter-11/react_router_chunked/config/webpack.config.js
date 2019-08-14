@@ -143,25 +143,33 @@ module.exports = function(webpackEnv) {
       : isEnvDevelopment && "cheap-module-source-map",
     // These are the "entry points" to our application.
     // This means they will be the "root" imports that are included in JS bundle.
-    entry: [
-      // Include an alternative client for WebpackDevServer. A client's job is to
-      // connect to WebpackDevServer by a socket and get notified about changes.
-      // When you save a file, the client will either apply hot updates (in case
-      // of CSS changes), or refresh the page (in case of JS changes). When you
-      // make a syntax error, this client will display a syntax error overlay.
-      // Note: instead of the default WebpackDevServer client, we use a custom one
-      // to bring better experience for Create React App users. You can replace
-      // the line below with these two lines if you prefer the stock client:
-      // require.resolve('webpack-dev-server/client') + '?/',
-      // require.resolve('webpack/hot/dev-server'),
-      isEnvDevelopment &&
+    entry: {
+      index: [
+        // Include an alternative client for WebpackDevServer. A client's job is to
+        // connect to WebpackDevServer by a socket and get notified about changes.
+        // When you save a file, the client will either apply hot updates (in case
+        // of CSS changes), or refresh the page (in case of JS changes). When you
+        // make a syntax error, this client will display a syntax error overlay.
+        // Note: instead of the default WebpackDevServer client, we use a custom one
+        // to bring better experience for Create React App users. You can replace
+        // the line below with these two lines if you prefer the stock client:
+        // require.resolve('webpack-dev-server/client') + '?/',
+        // require.resolve('webpack/hot/dev-server'),
+
         require.resolve("react-dev-utils/webpackHotDevClient"),
-      // Finally, this is your app's code:
-      paths.appIndexJs
-      // We include the app code last so that if there is a runtime error during
-      // initialization, it doesn't blow up the WebpackDevServer client, and
-      // changing JS code would still trigger a refresh.
-    ].filter(Boolean),
+        // Finally, this is your app's code:
+        paths.appIndexJs
+        // "./src/pages/Home.js",
+        // "./src/pages/About.js",
+        // "./src/pages/NotFound.js"
+        // We include the app code last so that if there is a runtime error during
+        // initialization, it doesn't blow up the WebpackDevServer client, and
+        // changing JS code would still trigger a refresh.
+      ].filter(Boolean)
+      // home: ["./src/pages/Home.js"],
+      // about: ["./src/pages/About.js"],
+      // 404: ["./src/pages/NotFound.js"]
+    },
     output: {
       // The build folder.
       path: isEnvProduction ? paths.appBuild : undefined,
@@ -259,11 +267,11 @@ module.exports = function(webpackEnv) {
       // https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366
       splitChunks: {
         chunks: "all",
-        name: false
+        name: true
       },
       // Keep the runtime chunk separated to enable long term caching
       // https://twitter.com/wSokra/status/969679223278505985
-      runtimeChunk: true
+      runtimeChunk: false
     },
     resolve: {
       // This allows you to set a fallback for where Webpack should look for modules.
@@ -516,6 +524,29 @@ module.exports = function(webpackEnv) {
             : undefined
         )
       ),
+      // new HtmlWebpackPlugin({
+      //   inject: true,
+      //   chunks: ["index"],
+      //   template: paths.appHtml
+      // }),
+      // new HtmlWebpackPlugin({
+      //   inject: true,
+      //   chunks: ["home"],
+      //   // template: paths.appHtml,
+      //   filename: "home.html"
+      // }),
+      // new HtmlWebpackPlugin({
+      //   inject: true,
+      //   chunks: ["about"],
+      //   // template: paths.appHtml,
+      //   filename: "about.html"
+      // }),
+      // new HtmlWebpackPlugin({
+      //   inject: true,
+      //   chunks: ["404"],
+      //   // template: paths.appHtml,
+      //   filename: "404.html"
+      // }),
       // Inlines the webpack runtime script. This script is too small to warrant
       // a network request.
       isEnvProduction &&
